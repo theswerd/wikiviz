@@ -4,6 +4,8 @@
     <link rel="stylesheet" href="css/index.css" />
   </head>
   <body>
+    <script src="https://d3js.org/d3.v4.min.js"></script>
+
     <nav>
       <div>
         <h1>WikiViz</h1>
@@ -20,20 +22,22 @@
       ></iframe>
     </nav>
     <center class="enter_url">
+        
       <h2>Enter a Wikipedia URL</h2>
       <div>
         <prefix> https://en.wikipedia.org/wiki/ </prefix>
-       <input size="10" type="url" id="baseURL" autofocus />
+        <input size="10" type="url" id="baseURL" autofocus />
       </div>
-      <div style="height: 10px;"> </div>
+      <div style="height: 10px"></div>
       <div>
         <prefix>Layers</prefix>
-        <input value="3" type="number" id="depth">
+        <input value="3" type="number" id="depth" />
       </div>
-      <button id="getConnections" class='disabled' onclick="getConnections()">
+      <button id="getConnections" class="disabled" onclick="getConnections()">
         Get Connections
       </button>
       <p id="loadingMessage"></p>
+      <svg id="graphic" width="960" height="600"></svg>
     </center>
     <script src="js/index.js"></script>
   </body>

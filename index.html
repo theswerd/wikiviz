@@ -10,7 +10,8 @@
         <p id="subheader">Visualize Wikipedia Page Connections</p>
       </div>
 
-      <iframe class="sponsor"
+      <iframe
+        class="sponsor"
         src="https://github.com/sponsors/theswerd/button"
         title="Sponsor theswerd"
         height="35"
@@ -18,10 +19,21 @@
         style="border: 0"
       ></iframe>
     </nav>
-    <center>
-        <input type="url"/>
-            
-        
+    <center class="enter_url">
+      <h2>Enter a Wikipedia URL</h2>
+      <div>
+        <prefix> https://en.wikipedia.org/wiki/ </prefix>
+       <input size="10" type="url" id="baseURL" autofocus />
+      </div>
+      <div style="height: 10px;"> </div>
+      <div>
+        <prefix>Layers</prefix>
+        <input value="3" type="number" id="depth">
+      </div>
+      <button id="getConnections" class='disabled' onclick="getConnections()">
+        Get Connections
+      </button>
     </center>
+    <script src="js/index.js"></script>
   </body>
 </html>

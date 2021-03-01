@@ -1,0 +1,24 @@
+input {
+    border: none;
+    padding: 8px;
+    border-radius: 0px 8px 8px 0px;
+    font-size: 20px;
+    
+}
+
+input:focus {
+    outline: none;
+}
+
+prefix {
+    background-color: #f7f7f7;
+    padding: 8px;
+    font-size: 20px;
+    border-radius: 8px 0px 0px 8px;
+
+}
+
+.enter_url {
+    display: flex;
+    flex-direction: column;
+}

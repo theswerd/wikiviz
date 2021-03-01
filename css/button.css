@@ -1,0 +1,29 @@
+button {
+    margin: 10px;
+    padding: 20px;
+    background-color: white;
+    border-radius: 8px;
+    transition: 300ms ease;
+}
+
+button.enabled {
+    border:1px #6666ff solid;
+    cursor:pointer;
+
+
+}
+button.disabled    {
+
+    border:1px #ccc solid;
+    cursor:not-allowed;
+}
+
+button .enabled :hover {
+    border:1px #0000ff solid;
+    background-color: #f4f4f4;
+}
+button:focus{
+    
+    outline: none;
+}
+

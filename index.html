@@ -11,21 +11,24 @@
         <h1>WikiViz</h1>
         <p id="subheader">Visualize Wikipedia Page Connections</p>
       </div>
-
-      <iframe
-        class="sponsor"
-        src="https://github.com/sponsors/theswerd/button"
-        title="Sponsor theswerd"
-        height="35"
-        width="116"
-        style="border: 0"
-      ></iframe>
+      <div style="display: flex; flex-direction: row;">
+        <iframe
+          class="sponsor"
+          src="https://github.com/sponsors/theswerd/button"
+          title="Sponsor theswerd"
+          height="35"
+          width="116"
+          style="border: 0"
+        ></iframe>
+        <a href="https://github.com/theswerd/wikiviz" class="social">
+        <img src="assets/githublogo.png" height="30"/>
+        </a>
+      </div>
     </nav>
     <center id="enter_url">
-        
       <h2>Enter a Wikipedia URL</h2>
       <div>
-        <prefix> https://en.wikipedia.org/wiki/ </prefix>
+        <prefix>https://en.wikipedia.org/wiki/</prefix>
         <input size="10" type="url" id="baseURL" autofocus />
       </div>
       <div style="height: 10px"></div>
@@ -39,8 +42,7 @@
       <p id="loadingMessage"></p>
     </center>
     <center>
-        <svg id="graphic" width="960" height="600"></svg>
-
+      <svg id="graphic" width="960" height="600"></svg>
     </center>
     <script src="js/index.js"></script>
   </body>

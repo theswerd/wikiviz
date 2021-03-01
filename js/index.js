@@ -52,7 +52,6 @@ let resetGraph = () => {
 };
 
 let setGraph = (id) => {
-  resetGraph()
   fetch(
     "https://en.wikipedia.org/w/api.php?action=query&titles=Title&prop=links&pllimit=max&gpllimit=500&origin=*&format=json&formatversion=2&titles=" +
       id,

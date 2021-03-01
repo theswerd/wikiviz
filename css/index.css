@@ -1,0 +1,24 @@
+
+h1 {
+  margin: 0px;
+  padding: 0px;
+}
+
+p {
+    margin: 0px;
+}
+
+nav {
+  border-bottom: 1px #eaeaeaea solid;
+  width: 100%;
+  background-color: white;
+  position: fixed;
+  padding: 8px;
+}
+
+body {
+  font-family: sans-serif;
+  padding: 0px;
+  margin: 0px;
+  background-color: #f1f1ff;
+}

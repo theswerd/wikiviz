@@ -24,8 +24,8 @@ document.getElementById("depth").addEventListener("input", (event) => {
     event.target.value = 6;
   }
 });
-var graph
-var simulation
+var graph;
+var simulation;
 let getConnections = () => {
   if (document.getElementById("getConnections").className == "enabled") {
     const url = document.getElementById("baseURL").value;
@@ -45,10 +45,11 @@ let getConnections = () => {
       .then((json) => {
         console.log(json);
         loading.innerText = "";
-         graph = {
+        graph = {
           links: [],
           nodes: [],
         };
+        document.getElementById("graphic").innerHTML = "";
 
         graph.nodes.push({
           id: json.query.pages[0].title,

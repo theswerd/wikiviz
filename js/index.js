@@ -1,5 +1,15 @@
 console.log("Welcome to WikiViz");
 
+window.onload = () => {
+  document.getElementById("graphic").setAttribute("width", window.innerWidth);
+  document.getElementById("graphic").setAttribute("height", window.innerHeight);
+};
+
+window.onresize = () => {
+  document.getElementById("graphic").setAttribute("width", window.innerWidth);
+  document.getElementById("graphic").setAttribute("height", window.innerHeight);
+};
+
 document.getElementById("baseURL").addEventListener("input", (event) => {
   if (event.target.value.startsWith("https://en.wikipedia.org/wiki/")) {
     event.target.value = event.target.value.replace(
@@ -43,6 +53,7 @@ let getConnections = () => {
     )
       .then((response) => response.json())
       .then((json) => {
+        document.getElementById('enter_url').style.display = 'none'
         console.log(json);
         loading.innerText = "";
         graph = {

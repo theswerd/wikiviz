@@ -18,7 +18,7 @@ prefix {
 
 }
 
-.enter_url {
+#enter_url {
     display: flex;
     flex-direction: column;
 }

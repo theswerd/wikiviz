@@ -178,7 +178,10 @@ let setGraph = (id) => {
 
       function nodeClicked(d) {
         console.log(d);
-        setGraph(d.id)
+        if(d.group != 1){
+          setGraph(d.id)
+
+        }
       }
 
       function dragged(d) {

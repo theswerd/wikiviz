@@ -29,7 +29,7 @@
       <h2>Enter a Wikipedia URL</h2>
       <div>
         <prefix>https://en.wikipedia.org/wiki/</prefix>
-        <input size="10" type="url" id="baseURL" autofocus />
+        <input size="10" type="text" id="baseURL"  onsubmit="getConnections()" autofocus/>
       </div>
       <div style="height: 10px"></div>
       <button id="getConnections" class="disabled" onclick="getConnections()">

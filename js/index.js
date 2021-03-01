@@ -24,7 +24,8 @@ document.getElementById("depth").addEventListener("input", (event) => {
     event.target.value = 6;
   }
 });
-
+var graph
+var simulation
 let getConnections = () => {
   if (document.getElementById("getConnections").className == "enabled") {
     const url = document.getElementById("baseURL").value;
@@ -42,30 +43,30 @@ let getConnections = () => {
     )
       .then((response) => response.json())
       .then((json) => {
-          console.log(json)
+        console.log(json);
         loading.innerText = "";
-        var graph = {
+         graph = {
           links: [],
           nodes: [],
         };
 
-        graph.nodes.push(
-            {
-                "id": json.query.pages[0].title, "group": 1,        
-            }
-        )
+        graph.nodes.push({
+          id: json.query.pages[0].title,
+          group: 1,
+        });
 
-        for(index in json.query.pages[0].links){
-            console.log(index)
-            graph.nodes.push(
-                {
-                    "id": json.query.pages[0].links[index].title, "group": 2,        
-                }
-            ) 
-            graph.links.push({"source": json.query.pages[0].title, "target": json.query.pages[0].links[index].title, "value": 0.1},)
+        for (index in json.query.pages[0].links) {
+          console.log(index);
+          graph.nodes.push({
+            id: json.query.pages[0].links[index].title,
+            group: 2,
+          });
+          graph.links.push({
+            source: json.query.pages[0].title,
+            target: json.query.pages[0].links[index].title,
+            value: 1,
+          });
         }
-
-
 
         var svg = d3.select("svg"),
           width = +svg.attr("width"),
@@ -73,7 +74,7 @@ let getConnections = () => {
 
         var color = d3.scaleOrdinal(d3.schemeCategory20);
 
-        var simulation = d3
+        simulation = d3
           .forceSimulation()
           .force(
             "link",
@@ -81,7 +82,7 @@ let getConnections = () => {
               return d.id;
             })
           )
-          .force("charge", d3.forceManyBody())
+          .force("charge", d3.forceManyBody().strength(-1000))
           .force("center", d3.forceCenter(width / 2, height / 2));
 
         var link = svg

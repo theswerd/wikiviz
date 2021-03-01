@@ -27,13 +27,7 @@ document.getElementById("baseURL").addEventListener("input", (event) => {
   }
 });
 
-// document.getElementById("depth").addEventListener("input", (event) => {
-//   if (event.target.value < 1) {
-//     event.target.value = 1;
-//   } else if (event.target.value > 6) {
-//     event.target.value = 6;
-//   }
-// });
+
 var graph;
 var simulation;
 let getConnections = () => {
